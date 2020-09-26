@@ -23,6 +23,7 @@ class ParkingManagementViewController: UIViewController {
     self.tableView.delegate = self
     
     self.setupNavBar()
+    self.setupSearchBar()
     self.setupBindings()
     
     self.parkingManagementVM.fetchParkingLots()
@@ -31,6 +32,14 @@ class ParkingManagementViewController: UIViewController {
   private func setupNavBar() {
     let addParkingLot = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.openFormParkingLot))
     self.navigationItem.setRightBarButton(addParkingLot, animated: false)
+  }
+  
+  private func setupSearchBar() {
+    let searchController = UISearchController(searchResultsController: nil)
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Buscar por placa"
+    searchController.searchResultsUpdater = self
+    self.navigationItem.searchController = searchController
   }
   
   private func setupBindings() {
@@ -112,5 +121,11 @@ extension ParkingManagementViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let parkingLot = self.parkingManagementVM.parkingLots[indexPath.row]
     self.parkingManagementVM.departure(parkingLot: parkingLot)
+  }
+}
+
+extension ParkingManagementViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    self.parkingManagementVM.updateFilter(text: searchController.searchBar.text)
   }
 }

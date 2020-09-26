@@ -9,8 +9,12 @@ import Foundation
 
 extension DBManager {
   
-  func fetchParkingLots(completion: (([ParkingLot]?, CustomError?) -> Void)) {
+  func fetchParkingLots(plate: String?, completion: (([ParkingLot]?, CustomError?) -> Void)) {
     let request = ParkingLot.createFetchRequest()
+    
+    if let plate = plate, !plate.isEmpty {
+      request.predicate = NSPredicate(format: "plate contains[c] %@", plate)
+    }
     
     do {
       let parkingLots = try self.context.fetch(request)

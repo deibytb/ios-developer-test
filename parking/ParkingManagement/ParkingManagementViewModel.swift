@@ -20,8 +20,18 @@ class ParkingManagementViewModel {
   var alertPayment: ((ParkingLotClass) -> Void)?
   var errorMessage: ((String) -> Void)?
   
+  func updateFilter(text: String?) {
+    if let text = text, !text.isEmpty {
+      self.filter = text
+    } else {
+      self.filter = nil
+    }
+    
+    self.fetchParkingLots()
+  }
+  
   func fetchParkingLots() {
-    self.db.fetchParkingLots { (parkingLots, error) in
+    self.db.fetchParkingLots(plate: self.filter) { (parkingLots, error) in
       self.validateDatabaseError(error)
       if let parkingLots = parkingLots {
         self.parkingLots = parkingLots.map({ ParkingLotClass(parkingLot: $0) })
@@ -40,8 +50,11 @@ class ParkingManagementViewModel {
   }
   
   func departure(parkingLot: ParkingLotClass) {
-    parkingLot.departure = Date()
+    guard parkingLot.amount == nil else {
+      return
+    }
     
+    parkingLot.departure = Date()
     guard let departure = parkingLot.departure, let amount = parkingLot.amount else {
       return
     }
