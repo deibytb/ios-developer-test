@@ -80,7 +80,7 @@ extension DBManager {
     }
   }
   
-  private func searchVehicleBy(plate: String, completion: ((Vehicle?, CustomError?) -> Void)) {
+  func searchVehicleBy(plate: String, completion: ((Vehicle?, CustomError?) -> Void)) {
     let request = Vehicle.createFetchRequest()
     request.predicate = NSPredicate(format: "plate == %@", plate)
     

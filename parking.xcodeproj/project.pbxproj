@@ -27,6 +27,14 @@
 		A2AEACDC251F019C00D9B8A1 /* VehicleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACDB251F019C00D9B8A1 /* VehicleClass.swift */; };
 		A2AEACEA251F075900D9B8A1 /* VehicleFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACE9251F075900D9B8A1 /* VehicleFormViewController.swift */; };
 		A2AEACEF251F086400D9B8A1 /* VehicleFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACEE251F086400D9B8A1 /* VehicleFormViewModel.swift */; };
+		A2AEACF8251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACF6251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift */; };
+		A2AEACF9251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACF7251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift */; };
+		A2AEACFF251F197700D9B8A1 /* ParkingLotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEACFE251F197700D9B8A1 /* ParkingLotClass.swift */; };
+		A2AEAD04251F1AE700D9B8A1 /* DBManager+ParkingLot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD03251F1AE700D9B8A1 /* DBManager+ParkingLot.swift */; };
+		A2AEAD15251F200100D9B8A1 /* ParkingManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AEAD14251F200100D9B8A1 /* ParkingManagement.storyboard */; };
+		A2AEAD1A251F260A00D9B8A1 /* ParkingManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD19251F260A00D9B8A1 /* ParkingManagementViewController.swift */; };
+		A2AEAD1F251F26EB00D9B8A1 /* ParkingManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD1E251F26EB00D9B8A1 /* ParkingManagementViewModel.swift */; };
+		A2AEAD24251F28F400D9B8A1 /* ParkingLotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD23251F28F400D9B8A1 /* ParkingLotTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,14 @@
 		A2AEACDB251F019C00D9B8A1 /* VehicleClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleClass.swift; sourceTree = "<group>"; };
 		A2AEACE9251F075900D9B8A1 /* VehicleFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFormViewController.swift; sourceTree = "<group>"; };
 		A2AEACEE251F086400D9B8A1 /* VehicleFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFormViewModel.swift; sourceTree = "<group>"; };
+		A2AEACF6251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingLot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A2AEACF7251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingLot+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A2AEACFE251F197700D9B8A1 /* ParkingLotClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotClass.swift; sourceTree = "<group>"; };
+		A2AEAD03251F1AE700D9B8A1 /* DBManager+ParkingLot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBManager+ParkingLot.swift"; sourceTree = "<group>"; };
+		A2AEAD14251F200100D9B8A1 /* ParkingManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingManagement.storyboard; sourceTree = "<group>"; };
+		A2AEAD19251F260A00D9B8A1 /* ParkingManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingManagementViewController.swift; sourceTree = "<group>"; };
+		A2AEAD1E251F26EB00D9B8A1 /* ParkingManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingManagementViewModel.swift; sourceTree = "<group>"; };
+		A2AEAD23251F28F400D9B8A1 /* ParkingLotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 				A2AEACDA251F017E00D9B8A1 /* Models */,
 				A2AEAC6D251EF19000D9B8A1 /* AppDelegate.swift */,
 				A2AEAC6F251EF19000D9B8A1 /* SceneDelegate.swift */,
+				A2AEAD13251F1FD200D9B8A1 /* ParkingManagement */,
 				A2AEACC7251EFB2F00D9B8A1 /* VehicleManagement */,
 				A2AEAC71251EF19000D9B8A1 /* ViewController.swift */,
 				A2AEAC73251EF19000D9B8A1 /* Main.storyboard */,
@@ -159,9 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				A2AEACAE251EF3F800D9B8A1 /* CoreData */,
+				A2AEACBC251EF87500D9B8A1 /* CodeDataService.swift */,
 				A2AEACB2251EF42200D9B8A1 /* DBManager.swift */,
 				A2AEACB7251EF4C600D9B8A1 /* DBManager+Vehicle.swift */,
-				A2AEACBC251EF87500D9B8A1 /* CodeDataService.swift */,
+				A2AEAD03251F1AE700D9B8A1 /* DBManager+ParkingLot.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -172,6 +190,8 @@
 				A2AEAC76251EF19000D9B8A1 /* parking.xcdatamodeld */,
 				A2AEACA7251EF3EA00D9B8A1 /* Vehicle+CoreDataClass.swift */,
 				A2AEACA8251EF3EA00D9B8A1 /* Vehicle+CoreDataProperties.swift */,
+				A2AEACF6251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift */,
+				A2AEACF7251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -192,8 +212,20 @@
 			isa = PBXGroup;
 			children = (
 				A2AEACDB251F019C00D9B8A1 /* VehicleClass.swift */,
+				A2AEACFE251F197700D9B8A1 /* ParkingLotClass.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A2AEAD13251F1FD200D9B8A1 /* ParkingManagement */ = {
+			isa = PBXGroup;
+			children = (
+				A2AEAD14251F200100D9B8A1 /* ParkingManagement.storyboard */,
+				A2AEAD23251F28F400D9B8A1 /* ParkingLotTableViewCell.swift */,
+				A2AEAD19251F260A00D9B8A1 /* ParkingManagementViewController.swift */,
+				A2AEAD1E251F26EB00D9B8A1 /* ParkingManagementViewModel.swift */,
+			);
+			path = ParkingManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +335,7 @@
 				A2AEAC7D251EF19200D9B8A1 /* LaunchScreen.storyboard in Resources */,
 				A2AEAC7A251EF19200D9B8A1 /* Assets.xcassets in Resources */,
 				A2AEAC75251EF19000D9B8A1 /* Main.storyboard in Resources */,
+				A2AEAD15251F200100D9B8A1 /* ParkingManagement.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,13 +364,20 @@
 				A2AEACD6251EFCBA00D9B8A1 /* VehicleManagementViewModel.swift in Sources */,
 				A2AEACA9251EF3EA00D9B8A1 /* Vehicle+CoreDataClass.swift in Sources */,
 				A2AEACEA251F075900D9B8A1 /* VehicleFormViewController.swift in Sources */,
+				A2AEACF9251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift in Sources */,
 				A2AEACDC251F019C00D9B8A1 /* VehicleClass.swift in Sources */,
 				A2AEACCE251EFBB800D9B8A1 /* VehicleManagementViewController.swift in Sources */,
+				A2AEACFF251F197700D9B8A1 /* ParkingLotClass.swift in Sources */,
+				A2AEAD1A251F260A00D9B8A1 /* ParkingManagementViewController.swift in Sources */,
+				A2AEAD04251F1AE700D9B8A1 /* DBManager+ParkingLot.swift in Sources */,
 				A2AEACAA251EF3EA00D9B8A1 /* Vehicle+CoreDataProperties.swift in Sources */,
+				A2AEACF8251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift in Sources */,
 				A2AEACBD251EF87500D9B8A1 /* CodeDataService.swift in Sources */,
 				A2AEAC72251EF19000D9B8A1 /* ViewController.swift in Sources */,
 				A2AEAC6E251EF19000D9B8A1 /* AppDelegate.swift in Sources */,
+				A2AEAD24251F28F400D9B8A1 /* ParkingLotTableViewCell.swift in Sources */,
 				A2AEACB8251EF4C600D9B8A1 /* DBManager+Vehicle.swift in Sources */,
+				A2AEAD1F251F26EB00D9B8A1 /* ParkingManagementViewModel.swift in Sources */,
 				A2AEACEF251F086400D9B8A1 /* VehicleFormViewModel.swift in Sources */,
 				A2AEAC70251EF19000D9B8A1 /* SceneDelegate.swift in Sources */,
 				A2AEACB3251EF42200D9B8A1 /* DBManager.swift in Sources */,

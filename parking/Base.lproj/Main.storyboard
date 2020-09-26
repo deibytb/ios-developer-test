@@ -26,10 +26,23 @@
                                     <action selector="showVehiclesManagement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6XK-1o-ocx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1i-1D-Ix5">
+                                <rect key="frame" x="107" y="122" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="quR-Li-LvM"/>
+                                </constraints>
+                                <state key="normal" title="Gestión de ingresos y salidas"/>
+                                <connections>
+                                    <action selector="showParkingManagement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ISm-Xl-q4D"/>
+                                    <action selector="showVehiclesManagement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEW-I2-pGz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="r1i-1D-Ix5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ye-Od-vEQ"/>
+                            <constraint firstItem="r1i-1D-Ix5" firstAttribute="top" secondItem="xNC-ha-cBn" secondAttribute="bottom" constant="32" id="3Ap-33-Tnd"/>
                             <constraint firstItem="xNC-ha-cBn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8jJ-Hk-Vdn"/>
                             <constraint firstItem="xNC-ha-cBn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Y8v-1D-hIC"/>
                         </constraints>
