@@ -37,6 +37,8 @@
 		A2AEAD24251F28F400D9B8A1 /* ParkingLotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD23251F28F400D9B8A1 /* ParkingLotTableViewCell.swift */; };
 		A2AEAD2D251F916700D9B8A1 /* ParkingLotClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD2C251F916700D9B8A1 /* ParkingLotClassTests.swift */; };
 		A2AEAD4A251FA59A00D9B8A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD49251FA59A00D9B8A1 /* Extensions.swift */; };
+		A2AEAD53251FB3DA00D9B8A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */; };
+		A2AEAD5B251FB3EF00D9B8A1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		A2AEAD23251F28F400D9B8A1 /* ParkingLotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotTableViewCell.swift; sourceTree = "<group>"; };
 		A2AEAD2C251F916700D9B8A1 /* ParkingLotClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLotClassTests.swift; sourceTree = "<group>"; };
 		A2AEAD49251FA59A00D9B8A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +152,9 @@
 				A2AEACDA251F017E00D9B8A1 /* Models */,
 				A2AEAC6D251EF19000D9B8A1 /* AppDelegate.swift */,
 				A2AEAC6F251EF19000D9B8A1 /* SceneDelegate.swift */,
+				A2AEAD51251FB3BD00D9B8A1 /* Main */,
 				A2AEAD13251F1FD200D9B8A1 /* ParkingManagement */,
 				A2AEACC7251EFB2F00D9B8A1 /* VehicleManagement */,
-				A2AEAC71251EF19000D9B8A1 /* ViewController.swift */,
-				A2AEAC73251EF19000D9B8A1 /* Main.storyboard */,
 				A2AEAC7E251EF19200D9B8A1 /* Info.plist */,
 			);
 			path = parking;
@@ -248,6 +251,17 @@
 				A2AEAD49251FA59A00D9B8A1 /* Extensions.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A2AEAD51251FB3BD00D9B8A1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A2AEAC73251EF19000D9B8A1 /* Main.storyboard */,
+				A2AEAC71251EF19000D9B8A1 /* ViewController.swift */,
+				A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */,
+				A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AEAC78251EF19000D9B8A1 /* parking.xcdatamodeld in Sources */,
+				A2AEAD53251FB3DA00D9B8A1 /* MainViewController.swift in Sources */,
 				A2AEACD6251EFCBA00D9B8A1 /* VehicleManagementViewModel.swift in Sources */,
 				A2AEACA9251EF3EA00D9B8A1 /* Vehicle+CoreDataClass.swift in Sources */,
 				A2AEACEA251F075900D9B8A1 /* VehicleFormViewController.swift in Sources */,
@@ -404,6 +419,7 @@
 				A2AEACEF251F086400D9B8A1 /* VehicleFormViewModel.swift in Sources */,
 				A2AEAC70251EF19000D9B8A1 /* SceneDelegate.swift in Sources */,
 				A2AEACB3251EF42200D9B8A1 /* DBManager.swift in Sources */,
+				A2AEAD5B251FB3EF00D9B8A1 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
