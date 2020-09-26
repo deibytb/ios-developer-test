@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
 
-
+  @IBAction func showVehiclesManagement(_ sender: Any) {
+    let storyboard = UIStoryboard(name: "VehicleManagement", bundle: nil)
+    if let vehicleManagementVC = storyboard.instantiateInitialViewController() {
+      self.present(vehicleManagementVC, animated: true, completion: nil)
+    }
+  }
 }
 
