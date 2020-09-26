@@ -40,6 +40,12 @@ class ParkingManagementViewController: UIViewController {
       }
     }
     
+    self.parkingManagementVM.alertPayment = { parkingLot in
+      DispatchQueue.main.async {
+        self.requestPayment(parkingLot: parkingLot)
+      }
+    }
+    
     self.parkingManagementVM.errorMessage = { err in
       print(err)
     }
@@ -55,7 +61,7 @@ class ParkingManagementViewController: UIViewController {
       guard let text = alertController.textFields?.first?.text, !text.isEmpty else {
         return
       }
-      self.parkingManagementVM.create(plate: text)
+      self.parkingManagementVM.entry(plate: text)
     }
     alertController.addAction(confirmAction)
     
@@ -66,6 +72,14 @@ class ParkingManagementViewController: UIViewController {
     self.present(alertController, animated: true, completion: nil)
   }
   
+  private func requestPayment(parkingLot: ParkingLotClass) {
+    let alertController = UIAlertController(title: "Estancia terminada", message: "El vehículo debe pagar $\(String(describing: parkingLot.amount ?? 0))", preferredStyle: .alert)
+    
+    let confirmAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(confirmAction)
+    
+    self.present(alertController, animated: true, completion: nil)
+  }
   
   /*
    // MARK: - Navigation
@@ -97,6 +111,6 @@ extension ParkingManagementViewController: UITableViewDataSource {
 extension ParkingManagementViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let parkingLot = self.parkingManagementVM.parkingLots[indexPath.row]
-    print(parkingLot.plate)
+    self.parkingManagementVM.departure(parkingLot: parkingLot)
   }
 }

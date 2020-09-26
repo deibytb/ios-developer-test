@@ -42,16 +42,16 @@ class ParkingLotTableViewCell: UITableViewCell {
     }
     if let amount = parkingLot.amount {
       self.amountLabel.isHidden = false
-      self.amountLabel.text = String(amount)
+      self.amountLabel.text = "$" + String(amount)
     } else {
       self.amountLabel.isHidden = true
     }
-    self.entryDateLabel.text = parkingLot.entry.description
-    self.entryHourLabel.text = parkingLot.entry.description
+    self.entryDateLabel.text = parkingLot.entry.onlyDate
+    self.entryHourLabel.text = parkingLot.entry.onlyTime
     if let departureDate = parkingLot.departure {
       self.departureDateLabel.isHidden = false
-      self.departureDateLabel.text = departureDate.description
-      self.departureHourLabel.text = departureDate.description
+      self.departureDateLabel.text = departureDate.onlyDate
+      self.departureHourLabel.text = departureDate.onlyTime
     } else {
       self.departureDateLabel.isHidden = true
       self.departureHourLabel.text = "Pendiente"

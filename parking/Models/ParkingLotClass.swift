@@ -12,7 +12,15 @@ class ParkingLotClass: NSObject {
   var vehicle: VehicleClass?
   var plate: String
   var entry: Date
-  var departure: Date?
+  var departure: Date? {
+    didSet {
+      if vehicle?.type == .some(.official) {
+        self.amount = 0.0
+      } else {
+        self.amount = self.calculateAmount()
+      }
+    }
+  }
   var amount: Double?
   
   init(parkingLot: ParkingLot) {
@@ -26,5 +34,15 @@ class ParkingLotClass: NSObject {
     if parkingLot.amount > 0 {
       self.amount = parkingLot.amount
     }
+  }
+  
+  func calculateAmount() -> Double {
+    guard let departureDate = self.departure else {
+      return 0
+    }
+    let intervalSeconds = departureDate.timeIntervalSince(self.entry)
+    let intervalMinutes = intervalSeconds / 60
+    
+    return (intervalMinutes * 0.05).roundForAmount()
   }
 }
