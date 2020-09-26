@@ -36,12 +36,17 @@ class ParkingLotClass: NSObject {
     }
   }
   
-  func calculateAmount() -> Double {
+  func calculateTimeInMinutes() -> Double {
     guard let departureDate = self.departure else {
       return 0
     }
     let intervalSeconds = departureDate.timeIntervalSince(self.entry)
     let intervalMinutes = intervalSeconds / 60
+    return intervalMinutes.rounded(.toNearestOrAwayFromZero)
+  }
+  
+  func calculateAmount() -> Double {
+    let intervalMinutes = self.calculateTimeInMinutes()
     
     return (intervalMinutes * 0.05).roundForAmount()
   }

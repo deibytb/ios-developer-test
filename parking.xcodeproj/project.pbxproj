@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A2AEAC6E251EF19000D9B8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAC6D251EF19000D9B8A1 /* AppDelegate.swift */; };
 		A2AEAC70251EF19000D9B8A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAC6F251EF19000D9B8A1 /* SceneDelegate.swift */; };
-		A2AEAC72251EF19000D9B8A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAC71251EF19000D9B8A1 /* ViewController.swift */; };
 		A2AEAC75251EF19000D9B8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2AEAC73251EF19000D9B8A1 /* Main.storyboard */; };
 		A2AEAC78251EF19000D9B8A1 /* parking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAC76251EF19000D9B8A1 /* parking.xcdatamodeld */; };
 		A2AEAC7A251EF19200D9B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2AEAC79251EF19200D9B8A1 /* Assets.xcassets */; };
@@ -39,6 +38,8 @@
 		A2AEAD4A251FA59A00D9B8A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD49251FA59A00D9B8A1 /* Extensions.swift */; };
 		A2AEAD53251FB3DA00D9B8A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */; };
 		A2AEAD5B251FB3EF00D9B8A1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */; };
+		A2AEAD60251FC8F500D9B8A1 /* CSVGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD5F251FC8F500D9B8A1 /* CSVGenerator.swift */; };
+		A2AEAD68251FDC1600D9B8A1 /* MainOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEAD67251FDC1600D9B8A1 /* MainOptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,6 @@
 		A2AEAC6A251EF19000D9B8A1 /* parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2AEAC6D251EF19000D9B8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2AEAC6F251EF19000D9B8A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2AEAC71251EF19000D9B8A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A2AEAC74251EF19000D9B8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2AEAC77251EF19000D9B8A1 /* parking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking.xcdatamodel; sourceTree = "<group>"; };
 		A2AEAC79251EF19200D9B8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		A2AEAD49251FA59A00D9B8A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A2AEAD5F251FC8F500D9B8A1 /* CSVGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVGenerator.swift; sourceTree = "<group>"; };
+		A2AEAD67251FDC1600D9B8A1 /* MainOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOptionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				A2AEAD13251F1FD200D9B8A1 /* ParkingManagement */,
 				A2AEACC7251EFB2F00D9B8A1 /* VehicleManagement */,
 				A2AEAC7E251EF19200D9B8A1 /* Info.plist */,
+				A2AEAD5F251FC8F500D9B8A1 /* CSVGenerator.swift */,
 			);
 			path = parking;
 			sourceTree = "<group>";
@@ -257,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A2AEAC73251EF19000D9B8A1 /* Main.storyboard */,
-				A2AEAC71251EF19000D9B8A1 /* ViewController.swift */,
+				A2AEAD67251FDC1600D9B8A1 /* MainOptionTableViewCell.swift */,
 				A2AEAD52251FB3DA00D9B8A1 /* MainViewController.swift */,
 				A2AEAD5A251FB3EF00D9B8A1 /* MainViewModel.swift */,
 			);
@@ -402,7 +405,9 @@
 				A2AEACA9251EF3EA00D9B8A1 /* Vehicle+CoreDataClass.swift in Sources */,
 				A2AEACEA251F075900D9B8A1 /* VehicleFormViewController.swift in Sources */,
 				A2AEACF9251F193900D9B8A1 /* ParkingLot+CoreDataProperties.swift in Sources */,
+				A2AEAD60251FC8F500D9B8A1 /* CSVGenerator.swift in Sources */,
 				A2AEACDC251F019C00D9B8A1 /* VehicleClass.swift in Sources */,
+				A2AEAD68251FDC1600D9B8A1 /* MainOptionTableViewCell.swift in Sources */,
 				A2AEACCE251EFBB800D9B8A1 /* VehicleManagementViewController.swift in Sources */,
 				A2AEACFF251F197700D9B8A1 /* ParkingLotClass.swift in Sources */,
 				A2AEAD1A251F260A00D9B8A1 /* ParkingManagementViewController.swift in Sources */,
@@ -411,7 +416,6 @@
 				A2AEACAA251EF3EA00D9B8A1 /* Vehicle+CoreDataProperties.swift in Sources */,
 				A2AEACF8251F193900D9B8A1 /* ParkingLot+CoreDataClass.swift in Sources */,
 				A2AEACBD251EF87500D9B8A1 /* CodeDataService.swift in Sources */,
-				A2AEAC72251EF19000D9B8A1 /* ViewController.swift in Sources */,
 				A2AEAC6E251EF19000D9B8A1 /* AppDelegate.swift in Sources */,
 				A2AEAD24251F28F400D9B8A1 /* ParkingLotTableViewCell.swift in Sources */,
 				A2AEACB8251EF4C600D9B8A1 /* DBManager+Vehicle.swift in Sources */,
