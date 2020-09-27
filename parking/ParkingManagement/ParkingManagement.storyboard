@@ -31,18 +31,18 @@
                                                     <rect key="frame" x="16" y="12" width="382" height="140"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="BIa-qt-WBx">
-                                                            <rect key="frame" x="8" y="8" width="110.5" height="46.5"/>
+                                                            <rect key="frame" x="8" y="8" width="120" height="51.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABCDEFG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbW-sS-hRu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="29"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="31.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oficial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-nu-4LT">
-                                                                    <rect key="frame" x="0.0" y="32" width="34" height="14.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="0.0" y="34.5" width="40" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" red="0.70398926040010601" green="0.8723637869684685" blue="0.52216909757387386" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>

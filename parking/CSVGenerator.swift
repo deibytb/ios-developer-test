@@ -21,7 +21,7 @@ class CSVGenerator {
     }
   }
   
-  func generateCSV(data: [Data]) {
+  func generateCSV(data: [Data], fileName: String, completion: ((URL) -> Void)) {
     var CSVString = "Numero de placa, Tiempo estacionado (min.), Cantidad a pagar\n"
     
     for row in data {
@@ -31,13 +31,14 @@ class CSVGenerator {
     
     let fileManager = FileManager.default
     let directory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    let path = directory.appendingPathComponent("Parking").appendingPathExtension("csv")
+    let path = directory.appendingPathComponent(fileName.convertToValidFileName()).appendingPathExtension("csv")
     if !fileManager.fileExists(atPath: path.path) {
       fileManager.createFile(atPath: path.path, contents: nil, attributes: nil)
     }
     do {
       try CSVString.write(to: path, atomically: true, encoding: .utf8)
       print(path.path)
+      completion(path)
     } catch {
       print("Error creating CSV", error.localizedDescription)
     }

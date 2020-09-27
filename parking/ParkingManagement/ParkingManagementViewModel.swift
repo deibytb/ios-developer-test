@@ -55,16 +55,26 @@ class ParkingManagementViewModel {
     }
     
     parkingLot.departure = Date()
-    guard let departure = parkingLot.departure, let amount = parkingLot.amount else {
-      return
-    }
     
-    self.db.updateParkingLot(id: parkingLot.id, departure: departure, amount: amount) { (success, error) in
-      self.validateDatabaseError(error)
-      if success {
+    if parkingLot.vehicle == nil {
+      self.db.deleteparkingLot(id: parkingLot.id) { (success, error) in
         self.fetchParkingLots()
         if parkingLot.vehicle == nil {
           self.alertPayment?(parkingLot)
+        }
+      }
+    } else {
+      guard let departure = parkingLot.departure, let amount = parkingLot.amount else {
+        return
+      }
+      
+      self.db.updateParkingLot(id: parkingLot.id, departure: departure, amount: amount) { (success, error) in
+        self.validateDatabaseError(error)
+        if success {
+          self.fetchParkingLots()
+          if parkingLot.vehicle == nil {
+            self.alertPayment?(parkingLot)
+          }
         }
       }
     }

@@ -37,6 +37,11 @@ class ParkingLotTableViewCell: UITableViewCell {
     if let typeVehicle = parkingLot.vehicle?.type.rawValue {
       self.typeVehicleLabel.isHidden = false
       self.typeVehicleLabel.text = typeVehicle
+      if parkingLot.vehicle?.type == .some(.official) {
+        self.typeVehicleLabel.textColor = UIColor(red: 0.87, green: 0.4, blue: 0.21, alpha: 1)
+      } else {
+        self.typeVehicleLabel.textColor = UIColor(red: 0.5, green: 0.87, blue: 0.52, alpha: 1)
+      }
     } else {
       self.typeVehicleLabel.isHidden = true
     }

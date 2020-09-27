@@ -77,12 +77,13 @@ class ParkingManagementViewController: UIViewController {
     alertController.addTextField { (textfield) in
       textfield.placeholder = "ABCDEFG"
     }
-    
-    self.present(alertController, animated: true, completion: nil)
+    DispatchQueue.main.async {
+      self.present(alertController, animated: true, completion: nil)
+    }
   }
   
   private func requestPayment(parkingLot: ParkingLotClass) {
-    let alertController = UIAlertController(title: "Estancia terminada", message: "El vehículo debe pagar $\(String(describing: parkingLot.amount ?? 0))", preferredStyle: .alert)
+    let alertController = UIAlertController(title: "Estancia terminada", message: "El vehículo \(parkingLot.plate) debe pagar $\(String(describing: parkingLot.amount ?? 0))", preferredStyle: .alert)
     
     let confirmAction = UIAlertAction(title: "OK", style: .default, handler: nil)
     alertController.addAction(confirmAction)
@@ -90,16 +91,23 @@ class ParkingManagementViewController: UIViewController {
     self.present(alertController, animated: true, completion: nil)
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  private func departureParkingLot(parkingLot: ParkingLotClass) {
+    guard parkingLot.amount == nil else {
+      return
+    }
+    
+    let alertController = UIAlertController(title: "¿Terminar estancia?", message: "Se finalizará la estancia del vehículo \(parkingLot.plate)", preferredStyle: .alert)
+    
+    let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+    alertController.addAction(cancelAction)
+    
+    let confirmAction = UIAlertAction(title: "OK", style: .default) { (_) in
+      self.parkingManagementVM.departure(parkingLot: parkingLot)
+    }
+    alertController.addAction(confirmAction)
+    
+    self.present(alertController, animated: true, completion: nil)
+  }
 }
 
 extension ParkingManagementViewController: UITableViewDataSource {
@@ -120,7 +128,9 @@ extension ParkingManagementViewController: UITableViewDataSource {
 extension ParkingManagementViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let parkingLot = self.parkingManagementVM.parkingLots[indexPath.row]
-    self.parkingManagementVM.departure(parkingLot: parkingLot)
+    DispatchQueue.main.async {
+      self.departureParkingLot(parkingLot: parkingLot)
+    }
   }
 }
 

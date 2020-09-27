@@ -33,7 +33,15 @@ class MainViewController: UIViewController {
     }
     
     self.mainVM.alertInitMonth = {
-      self.showAlertInitMonth()
+      DispatchQueue.main.async {
+        self.showAlertInitMonth()
+      }
+    }
+    
+    self.mainVM.alertShareFile = { url in
+      DispatchQueue.main.async {
+        self.showAlertShareFile(fileUrl: url)
+      }
     }
     
     self.mainVM.errorMessage = { err in
@@ -48,6 +56,11 @@ class MainViewController: UIViewController {
     alertController.addAction(confirmAction)
     
     self.present(alertController, animated: true, completion: nil)
+  }
+  
+  private func showAlertShareFile(fileUrl: URL) {
+    let activityController = UIActivityViewController(activityItems: [fileUrl], applicationActivities: nil)
+    self.present(activityController, animated: true, completion: nil)
   }
   
   @IBAction func showVehiclesManagement(_ sender: Any) {
@@ -78,7 +91,25 @@ class MainViewController: UIViewController {
   }
   
   @IBAction func residentsPayment(_ sender: Any) {
-    self.mainVM.generatePaymentReport()
+    let alertController = UIAlertController(title: "Reporte residentes", message: "Por favor ingresa un nombre para el archivo que vas a generar", preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+    alertController.addAction(cancelAction)
+    
+    let confirmAction = UIAlertAction(title: "Generar", style: .default) { (_) in
+      guard let text = alertController.textFields?.first?.text, !text.isEmpty else {
+        return
+      }
+      self.mainVM.generatePaymentReport(fileName: text)
+    }
+    alertController.addAction(confirmAction)
+    
+    alertController.addTextField { (textfield) in
+      textfield.placeholder = "Mi reporte"
+    }
+    
+    DispatchQueue.main.async {
+      self.present(alertController, animated: true, completion: nil)
+    }
   }
 }
 

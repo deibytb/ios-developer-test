@@ -36,6 +36,7 @@ class MainViewModel {
   private let db = DBManager()
   
   var didUpdate: (() -> Void)?
+  var alertShareFile: ((URL) -> Void)?
   var alertInitMonth: (() -> Void)?
   var errorMessage: ((String) -> Void)?
   
@@ -62,7 +63,7 @@ class MainViewModel {
     }
   }
   
-  func generatePaymentReport() {
+  func generatePaymentReport(fileName: String) {
     self.db.fetchParkingLots(plate: nil) { (parkingLots, error) in
       self.validateDatabaseError(error)
       if let parkingLots = parkingLots {
@@ -73,7 +74,9 @@ class MainViewModel {
         let groupByPlate = Dictionary(grouping: parkingLots, by: { $0.plate })
         let data = groupByPlate.map({ CSVGenerator.Data(plate: $0.key, parkingLots: $0.value) })
         
-        CSVGenerator().generateCSV(data: data)
+        CSVGenerator().generateCSV(data: data, fileName: fileName) { (url) in
+          self.alertShareFile?(url)
+        }
       }
     }
   }
