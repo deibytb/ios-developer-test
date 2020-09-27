@@ -48,6 +48,10 @@ class ParkingLotClass: NSObject {
   func calculateAmount() -> Double {
     let intervalMinutes = self.calculateTimeInMinutes()
     
-    return (intervalMinutes * 0.05).roundForAmount()
+    if let type = self.vehicle?.type {
+      return (intervalMinutes * type.chargePerMinute).roundForAmount()
+    } else {
+      return (intervalMinutes * 0.5).roundForAmount()
+    }
   }
 }

@@ -50,7 +50,7 @@ class ParkingManagementViewModel {
   }
   
   func departure(parkingLot: ParkingLotClass) {
-    guard parkingLot.amount == nil else {
+    guard parkingLot.departure == nil else {
       return
     }
     

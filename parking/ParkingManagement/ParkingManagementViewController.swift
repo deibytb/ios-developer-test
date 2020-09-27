@@ -92,7 +92,7 @@ class ParkingManagementViewController: UIViewController {
   }
   
   private func departureParkingLot(parkingLot: ParkingLotClass) {
-    guard parkingLot.amount == nil else {
+    guard parkingLot.departure == nil else {
       return
     }
     

@@ -12,6 +12,13 @@ class VehicleClass: NSObject {
     case official = "Oficial"
     case resident = "Residente"
     
+    var chargePerMinute: Double {
+      switch self {
+      case .official: return 0
+      case .resident: return 0.05
+      }
+    }
+    
     static let values: [VehicleType] = [.official, .resident]
   }
   

@@ -57,10 +57,17 @@ class ParkingLotTableViewCell: UITableViewCell {
       self.departureDateLabel.isHidden = false
       self.departureDateLabel.text = departureDate.onlyDate
       self.departureHourLabel.text = departureDate.onlyTime
+      self.cellState(enable: false)
     } else {
       self.departureDateLabel.isHidden = true
       self.departureHourLabel.text = "Pendiente"
+      self.cellState(enable: true)
     }
+  }
+  
+  private func cellState(enable: Bool) {
+    self.plateLabel.layer.opacity = enable ? 1 : 0.35
+    self.amountLabel.layer.opacity = enable ? 1 : 0.35
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
